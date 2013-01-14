@@ -1,0 +1,16 @@
+options {
+        s3e-data-dir="data"
+}
+files {
+	(source)
+		Game.cpp
+		(source/my_framework)
+			FrameworkApplication.cpp
+			FrameworkApplication.h
+		(source/game)
+			GameApplication.cpp
+		    GameApplication.h
+}
+subprojects {
+        iw2d
+}
