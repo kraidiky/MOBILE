@@ -7,6 +7,9 @@ files {
 		(source/my_framework)
 			FrameworkApplication.cpp
 			FrameworkApplication.h
+		(source/my_framework/display)
+			DisplayObject.cpp
+			DisplayObject.h
 		(source/game)
 			GameApplication.cpp
 		    GameApplication.h

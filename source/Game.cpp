@@ -4,9 +4,9 @@
 #include "game\GameApplication.h"
 
 int main () {
-	IwTrace("",("Game->main()"));
+	IwTrace(FUNCTIONS, ("Game->main()"));
 	FrameworkApplication *app = new GameApplication;
-	app->Start();
+	app->MainLoop();
 	delete app;
 	return 0;
 }
