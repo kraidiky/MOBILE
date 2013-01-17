@@ -2,9 +2,9 @@
 #include "IwDebug.h"
 
 GameApplication::GameApplication(void) {
-	IwTrace("",("new GameApplication()"));
+	IwTrace(FUNCTIONS, ("new GameApplication()"));
 }
 
 GameApplication::~GameApplication(void) {
-	IwTrace("",("~ GameApplication()"));
+	IwTrace(FUNCTIONS, ("~ GameApplication()"));
 }
