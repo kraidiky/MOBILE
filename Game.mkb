@@ -2,14 +2,24 @@ options {
         s3e-data-dir="data"
 }
 files {
-	(source)
+	[sources]
+	(sources)
 		Game.cpp
-		(source/my_framework)
+
+		[sources/my_framework]
+		(sources/my_framework)
 			FrameworkApplication.cpp
 			FrameworkApplication.h
-		(source/game)
+
+		[sources/game]
+		(sources/game)
 			GameApplication.cpp
-		    GameApplication.h
+			GameApplication.h
+
+			(sources/game/dices)
+			[sources/game/dices]
+				Dice.h
+				Dice.cpp
 }
 subprojects {
         iw2d
