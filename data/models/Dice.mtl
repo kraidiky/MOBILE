@@ -1,0 +1,13 @@
+// Source file: D:/Projects/Marmalade/Game/Dice.mb
+CIwMaterial
+{
+	name "Dice/lambert2"
+	colAmbient {180,28,0}
+	colDiffuse {180,28,0}
+}
+CIwMaterial
+{
+	name "Dice/lambert3"
+	colAmbient {88,107,110}
+	colDiffuse {88,107,110}
+}

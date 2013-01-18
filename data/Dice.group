@@ -1,0 +1,8 @@
+// Source file: D:/Projects/Marmalade/Game/Dice.mb
+// Exported By: <Unknown> on 01/19/13 02:04:44
+
+CIwResGroup
+{
+	name "Dice"
+	"./models/Dice.geo"
+}
