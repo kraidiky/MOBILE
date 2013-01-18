@@ -1,11 +1,9 @@
 #include "s3e.h"
 #include "FrameworkApplication.h"
 #include "IwDebug.h"
-#include "display\Stage.h"
 
 FrameworkApplication::FrameworkApplication (void) {
 	IwTrace(FUNCTIONS, ("new FrameworkApplication()"));
-	stage = new Stage;
 }
 FrameworkApplication::~FrameworkApplication (void) {
 	IwTrace(FUNCTIONS, ("~ FrameworkApplication()"));
