@@ -11,6 +11,11 @@ files {
 			FrameworkApplication.cpp
 			FrameworkApplication.h
 
+			[sources/my_framework/display]
+			(sources/my_framework/display)
+				DisplayObject.cpp
+				DisplayObject.h
+
 		[sources/game]
 		(sources/game)
 			GameApplication.cpp
@@ -22,5 +27,5 @@ files {
 				Dice.cpp
 }
 subprojects {
-        iw2d
+	iw2d
 }
