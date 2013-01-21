@@ -1,0 +1,8 @@
+// Source file: D:/Projects/Marmalade/Game/Cube.mb
+// Exported By: <Unknown> on 01/20/13 18:52:38
+
+CIwResGroup
+{
+	name "Cube"
+	"./models/Cube.geo"
+}

@@ -20,7 +20,7 @@ files {
 		(sources/game)
 			GameApplication.cpp
 			GameApplication.h
-
+			
 			(sources/game/dices)
 			[sources/game/dices]
 				Dice.h
@@ -28,4 +28,6 @@ files {
 }
 subprojects {
 	iw2d
+    iwgx
+    iwgraphics
 }

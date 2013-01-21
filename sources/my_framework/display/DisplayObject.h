@@ -1,20 +1,21 @@
 #pragma once
-class DisplayObject
-{
-public:
-	DisplayObject(void);
-	~DisplayObject(void);
+#ifndef DISPLAY_OBJECT
+#define DISPLAY_OBJECT
 
-	float x();
-	float x(float value);
+class DisplayObject {
+	public:
+		DisplayObject(void);
+		~DisplayObject(void);
+		virtual int Render(void);
 
+		float x();
+		float x(float value);
+		float y();
+		float y(float value);
 
-	float y();
-	float y(float value);
-
-	virtual void Render(void);
-protected:
-	float _x;
-	float _y;
+	protected:
+		float _x;
+		float _y;
 };
 
+#endif

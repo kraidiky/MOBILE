@@ -15,3 +15,11 @@
 #
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
+
+[S3E]
+SplashscreenBkR=255
+SplashscreenBkG=255
+SplashscreenBkB=255
+ 
+MemSize = 15000000
+MemSizeDebug = 15000000

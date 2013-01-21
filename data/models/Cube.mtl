@@ -1,0 +1,7 @@
+// Source file: D:/Projects/Marmalade/Game/Cube.mb
+CIwMaterial
+{
+	name "Cube/lambert1"
+	colAmbient {127,127,127}
+	colDiffuse {127,127,127}
+}
