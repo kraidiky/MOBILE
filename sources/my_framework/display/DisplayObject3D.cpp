@@ -10,7 +10,21 @@ DisplayObject3D::~DisplayObject3D(void) {
 	IwTrace(FUNCTIONS, ("~DisplayObject3D()"));
 }
 
-int DisplayObject3D::Render(void) { return 0;}
+int DisplayObject3D::Render(void) {
+	CIwFMat modelMatrix = CIwFMat::g_Identity;
+	//modelMatrix.
+	modelMatrix.PostRotateX(_rx);
+	modelMatrix.PostRotateY(_ry);
+	modelMatrix.PostRotateZ(_rz);
+	modelMatrix.ScaleRot(10);
+	modelMatrix.t.x = _x;
+	modelMatrix.t.y = _y;
+	modelMatrix.t.z = _z;
+	IwGxSetModelMatrix(&modelMatrix);
+
+	pModel->Render();
+	return 0;
+}
 
 float DisplayObject3D::z() { return _z; }
 float DisplayObject3D::z(float value) { return _z = value; }

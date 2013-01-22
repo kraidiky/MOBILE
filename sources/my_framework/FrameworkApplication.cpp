@@ -10,10 +10,10 @@ FrameworkApplication::FrameworkApplication (void) {
 	IwGraphicsInit();
 
 	IwGxSetLightType(1, IW_GX_LIGHT_DIFFUSE);
-	CIwFVec3 dd(0xFF, 0xFF, 0xFF);
+	CIwFVec3 dd(0x88, 0x88, 0x88);
 	IwGxSetLightDirn(1, &dd);
 
-	IwGxSetPerspMul(0xAF);
+	IwGxSetPerspMul(0xBB);
 
 }
 FrameworkApplication::~FrameworkApplication (void) {
@@ -31,7 +31,8 @@ int FrameworkApplication::MainLoop (void)  {
 		if (EachFrame())
 			break;
 		// Рендеринг объектов
-		Render();
+		if (Render())
+			break;
 		s3eDeviceYield(0); // Здесь будут игры с FPS-ом.
 		// Выход по клавиатуре происходит отсюда временно, потом событие будет через Stage прокидываться.
 		s3eKeyboardUpdate();
@@ -42,13 +43,14 @@ int FrameworkApplication::MainLoop (void)  {
 	return 0;
 }
 
-int FrameworkApplication::Render (void) {
-//	root->Render();
-	return 1;
-}
-// Перезаписываемая функция, вызывающаяся один раз в кадр.
+// Перезаписываемая функция, вызывающаяся один раз в кадр до рендеринга.
 int FrameworkApplication::EachFrame(void) {
-	return 1;
+	return 0;
+}
+
+int FrameworkApplication::Render (void) {
+	root->Render();
+	return 0;
 }
 
 //s3eDeviceYield(0); // Прервать поток, и отдать управление операционке на время.

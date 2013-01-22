@@ -8,22 +8,17 @@
 GameApplication::GameApplication(void) {
 	IwTrace(FUNCTIONS, ("new GameApplication()"));
 	root = dice = new Dice;
-	IwGetResManager()->LoadGroup("Dice.group");	
-	pModel = (CIwModel*)IwGetResManager()->GetResNamed("Dice", "CIwModel");
 }
 
 GameApplication::~GameApplication(void) {
 	IwTrace(FUNCTIONS, ("~GameApplication()"));
-	delete pModel;
+	//delete pModel;
 	delete dice;
 }
 
 int GameApplication::EachFrame(void) {
 	//FrameworkApplication::EachFrame();
 	// Поменять показатели на дайсе
-//	dice -> rx(dice -> rx() + 0.01);
-//	dice -> ry(dice -> ry() + 0.02);
-//	dice -> rz(dice -> rz() + 0.03);
 
 	IwGxClear( IW_GX_COLOUR_BUFFER_F | IW_GX_DEPTH_BUFFER_F );
 	IwGxLightingOn();
@@ -35,19 +30,21 @@ int GameApplication::EachFrame(void) {
 	view.LookAt(view.GetTrans(), CIwFVec3(0, 0, 0), -CIwFVec3::g_AxisY);
 	IwGxSetViewMatrix(&view);
 
-	CIwFMat modelMatrix = CIwFMat::g_Identity;
-	modelMatrix.t.x = 5;
-	IwGxSetModelMatrix(&modelMatrix);
+	dice->rx(dice->rx() + 0.005);
+	dice->ry(dice->ry() + 0.01);
+	dice->rz(dice->rz() + 0.03);
 
-	pModel->Render();
+	IwTrace(DICE,("Dice.x = %f",dice->x())) ;
 
-	IwGxFlush();
-	IwGxSwapBuffers();
 	return 0;
 }
 
 int GameApplication::Render(void) {
-	return FrameworkApplication::Render();
+	FrameworkApplication::Render();
+	
+	IwGxFlush();
+	IwGxSwapBuffers();
+
 	return 0;
 }
 		
