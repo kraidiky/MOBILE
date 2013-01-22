@@ -1,10 +1,13 @@
 #include "DisplayObject.h"
+#include "IwDebug.h"
 
 DisplayObject::DisplayObject(void) {
+	IwTrace(FUNCTIONS, ("new DisplayObject()"));
 	_x=0; _y=0;
 }
 
 DisplayObject::~DisplayObject(void) {
+	IwTrace(FUNCTIONS,("~DisplayObject()"));
 }
 
 int DisplayObject::Render(void) { return 0;}

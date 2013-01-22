@@ -15,7 +15,6 @@ class FrameworkApplication {
 		virtual int Render(void);
 
 		DisplayObject *root;
-		//CIwModel* pModel;
 };
  
 #endif

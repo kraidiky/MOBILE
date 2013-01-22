@@ -7,7 +7,7 @@
 
 GameApplication::GameApplication(void) {
 	IwTrace(FUNCTIONS, ("new GameApplication()"));
-//	root = dice = new Dice;
+	root = dice = new Dice;
 	IwGetResManager()->LoadGroup("Dice.group");	
 	pModel = (CIwModel*)IwGetResManager()->GetResNamed("Dice", "CIwModel");
 }
@@ -15,7 +15,7 @@ GameApplication::GameApplication(void) {
 GameApplication::~GameApplication(void) {
 	IwTrace(FUNCTIONS, ("~GameApplication()"));
 	delete pModel;
-//	delete dice;
+	delete dice;
 }
 
 int GameApplication::EachFrame(void) {
@@ -36,6 +36,7 @@ int GameApplication::EachFrame(void) {
 	IwGxSetViewMatrix(&view);
 
 	CIwFMat modelMatrix = CIwFMat::g_Identity;
+	modelMatrix.t.x = 5;
 	IwGxSetModelMatrix(&modelMatrix);
 
 	pModel->Render();

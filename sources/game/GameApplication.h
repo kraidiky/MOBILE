@@ -16,7 +16,7 @@ class GameApplication : public FrameworkApplication {
 
 		CIwModel* pModel;
 		//CIwFMat view;
-		//Dice *dice;
+		Dice *dice;
 };
  
 #endif
